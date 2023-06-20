@@ -45,6 +45,7 @@ public class SiteTest {
                 case 2:
                     System.out.println("----------------");
                     System.out.println("moving down");
+                    System.out.println(website.currentPage);
 //                    try{
 //                        this.currentPage.down(currentPage.name);
 //                    }
@@ -56,6 +57,7 @@ public class SiteTest {
                 case 3:
                     System.out.println("----------------");
                     System.out.println("moving up");
+                    System.out.println(website.getCurrent());
                     System.out.println("----------------");
                    break;
                 case 4: 

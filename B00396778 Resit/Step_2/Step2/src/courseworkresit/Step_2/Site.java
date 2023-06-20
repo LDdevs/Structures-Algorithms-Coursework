@@ -6,7 +6,7 @@ import java.util.*;
 
 public class Site {
 
-    private PageNode currentPage;
+    public PageNode currentPage;
 
     private static class PageNameNotFoundException extends Exception {
 
@@ -37,10 +37,10 @@ public class Site {
 
     public class PageNode {
 
-        private String name;
-        private PageNode up;
-        private PageNode across;
-        private PageNode down;
+        public String name;
+        public PageNode up;
+        public PageNode across;
+        public PageNode down;
     }
 
     public PageNode homePage;
@@ -87,11 +87,11 @@ public class Site {
         String movingDown = new String();
         movingDown += this.homePage.down;
         PageNode page = this.currentPage.down;
-//        while (!pageName.equalsIgnoreCase(page.name)){
-//            page = page.across;
-//            if (page == null)
-//                throw new PageNameNotFoundException();
-//        } 
+        while (!pageName.equalsIgnoreCase(page.name)){
+            page = page.across;
+            if (page == null)
+                throw new PageNameNotFoundException();
+        } this.currentPage = page;
 //        if(this.currentPage==this.homePage)
 //            throw new MoveDownInvalidException();
 //        else {
@@ -113,7 +113,7 @@ public class Site {
         if(this.currentPage == this.homePage) {
             throw new MoveUpInvalidException();
         } else {
-            return this.currentPage.up;
+            return this.homePage;
         }
     }
     
